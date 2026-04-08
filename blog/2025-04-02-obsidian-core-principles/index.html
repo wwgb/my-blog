@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的 Obsidian 系统核心规范</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- 正确路径：不带最前面斜杠 -->
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/card.css">
+</head>
+
+<body>
+  <header>
+    <div class="nav-inner">
+      <a href="/" class="logo"><img src="/images/logo.png" alt="Logo"></a>
+      <nav>
+        <a href="/">首页</a>
+        <a href="/plugin/">插件教程</a>
+        <a href="/case/">案例库</a>
+        <a href="/pkm/">PKM思考</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>我的系统规范</h1>
+<p><strong>文件：</strong> 指所有格式的文件，包括 <code>.md</code> <code>.canvas</code> <code>.excalidraw</code> <code>.components</code> <code>.jpg</code> <code>.js</code> 等。</p>
+<p>文档：特指 <code>.md</code> 文档。</p>
+<h2>2. 每个文件都必须在日记里办理「出生证明」</h2>
+<h2>2.1. 原则解读</h2>
+<ul>
+<li>即每个文件都必须由日记这个唯一入口，引入 Obsidian 仓库中。</li>
+<li>所有文件（.md、.pdf、.jpg、.canvas 等）都必须在日记中有记录。</li>
+<li>日记是唯一入口。</li>
+<li>自动生成的文件也要在 yaml 笔记属性和文档正文中注明。</li>
+</ul>
+<h2>2.2. ==为什么这条原则重要==</h2>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>没有这条原则</th>
+<th>有这条原则</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文件来源</td>
+<td>忘了在哪看到、为什么存</td>
+<td>去日记里搜，找到当天记录</td>
+</tr>
+<tr>
+<td>文件价值</td>
+<td>不知道当时为什么觉得重要</td>
+<td>日记里的上下文告诉你</td>
+</tr>
+<tr>
+<td>清理文件</td>
+<td>不敢删，怕删了有用的</td>
+<td>日记里没提的？删了也不心疼</td>
+</tr>
+<tr>
+<td>系统一致性</td>
+<td>文件散落各处，入口混乱</td>
+<td>所有内容从日记生长出来</td>
+</tr>
+</tbody>
+</table>
+<h2>2.3. 操作流程</h2>
+<ul>
+<li>创建新文件前，先在日记里写下“今天为什么需要它”</li>
+<li>用 <code>[[文件名]]</code> 的方式在日记中链接</li>
+<li>附件（PDF、图片等）同样需要被日记链接</li>
+</ul>
+<p>禁止：</p>
+<ul>
+<li>直接拖拽文件到库中而不在日记里记录</li>
+<li>在 Obsidian 外直接添加文件到文件夹</li>
+</ul>
+<p>定期清理未被日记链接的文件。</p>
+
+  </main>
+
+  <footer>© 2026</footer>
+</body>
+</html>
