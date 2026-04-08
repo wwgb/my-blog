@@ -1,0 +1,29 @@
+---
+layout: ""
+permalink: "/feed.xml"
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>PKM 思考</title>
+  <link>{{ metadata.url }}</link>
+  <description>个人知识管理笔记与思考</description>
+  <atom:link href="{{ metadata.url }}/feed.xml" rel="self" type="application/rss+xml" />
+
+  {% for post in collections.blog | reverse %}
+  {% if "memo" in post.data.webtab %}
+  <item>
+    <title>{{ post.data.title }}</title>
+    <link>{{ metadata.url }}{{ post.url }}</link>
+    <guid>{{ metadata.url }}{{ post.url }}</guid>
+    <pubDate>{{ post.date | date("rfc822") }}</pubDate>
+    <description>
+      {{ post.data.description | striptags | escape }}
+    </description>
+  </item>
+  {% endif %}
+  {% endfor %}
+
+</channel>
+</rss>

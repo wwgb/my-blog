@@ -1,0 +1,138 @@
+/* ==========================================
+   全站统一控制中心（最终版）
+========================================== */
+:root {
+  --orange: #FF7800;
+  --black: #2a3443;
+  --gray: #555555;
+  --gray-light: #888888;
+  --bg: #ffffff;
+  --paper: #fefcf5;
+  --border: #eaeaea;
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-28: 28px;
+  --space-30: 30px;
+
+  --page-gap: var(--space-24);
+  --nav-link-gap: var(--space-28);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --page-gap: var(--space-16);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Serif SC", serif;
+  background: #fff;
+  color: #222;
+  line-height: 1.8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* ==========================================
+   导航栏：严格左对齐 + 不拥挤 + 好看舒服
+========================================== */
+header {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px var(--page-gap);
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--space-28); /* LOGO 和导航之间舒适距离 */
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.logo img {
+  height: 32px;
+  display: block;
+  flex-shrink: 0;
+}
+
+header nav {
+  display: flex;
+  gap: var(--nav-link-gap);
+}
+
+header nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ==========================================
+   内容区域：全屏宽
+========================================== */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 100%;
+  padding: var(--space-20) var(--page-gap);
+}
+
+.container{
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+footer {
+  text-align: center;
+  padding: var(--space-20) var(--page-gap);
+  color: #888;
+}
+
+/* ==========================================
+   修复文章列表对齐
+========================================== */
+main ul,
+main ol {
+  padding-left: 0;
+  margin-left: 0;
+  list-style-position: inside;
+}
+
+main li {
+  margin-bottom: var(--space-8);
+}
+
+
+
+/* 卡片网格 - 1080p 一行 6 个 *//*
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-20);
+  margin-top: var(--space-20);
+}
+
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+}

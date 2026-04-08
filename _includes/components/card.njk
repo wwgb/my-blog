@@ -1,0 +1,168 @@
+<div class="waterfall-grid">
+{% for post in collections.blog %}
+{% if "memo" in post.data.webtab %}
+  {% set variant = loop.index0 % 8 %}
+  
+  <!-- 变体 1：大图在上 + 标签贴纸 -->
+  {% if variant == 0 %}
+  <div class="waterfall-card waterfall-card--image-top">
+    <div class="waterfall-image">
+      <img src="{{ post.data.banner }}" alt="{{ post.data.title }}">
+      <div class="waterfall-stickers">
+        {% for tag in post.data.tags %}
+          <span class="waterfall-sticker">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="waterfall-content">
+      <h3 class="waterfall-title">
+        <a href="{{ post.url }}">{{ post.data.title }}</a>
+      </h3>
+      <div class="waterfall-date">{{ post.data.created | date("YYYY.MM.DD") }}</div>
+      <p class="waterfall-description">{{ post.data.description | truncate(100) }}</p>
+    </div>
+  </div>
+  
+  <!-- 变体 2：大标题 + 小图在右 -->
+  {% elif variant == 1 %}
+  <div class="waterfall-card waterfall-card--title-big">
+    <div class="waterfall-content">
+      <div class="waterfall-tags">
+        {% for tag in post.data.tags %}
+          <span class="waterfall-tag">#{{ tag }}</span>
+        {% endfor %}
+      </div>
+      <h2 class="waterfall-title-xl">
+        <a href="{{ post.url }}">{{ post.data.title }}</a>
+      </h2>
+      <div class="waterfall-date">{{ post.data.created | date("MM/DD") }}</div>
+      <p class="waterfall-description">{{ post.data.description | truncate(80) }}</p>
+    </div>
+    <div class="waterfall-image-small">
+      <img src="{{ post.data.banner }}" alt="{{ post.data.title }}">
+    </div>
+  </div>
+  
+  <!-- 变体 3：图片在左 + 标题紧凑 -->
+  {% elif variant == 2 %}
+  <div class="waterfall-card waterfall-card--image-left">
+    <div class="waterfall-image-square">
+      <img src="{{ post.data.banner }}" alt="{{ post.data.title }}">
+    </div>
+    <div class="waterfall-content">
+      <div class="waterfall-date">{{ post.data.created | date("MM/DD") }}</div>
+      <h4 class="waterfall-title-md">
+        <a href="{{ post.url }}">{{ post.data.title }}</a>
+      </h4>
+      <div class="waterfall-tags-inline">
+        {% for tag in post.data.tags %}
+          <span class="waterfall-tag-small">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  
+  <!-- 变体 4：全宽图片 + 文字叠加 -->
+  {% elif variant == 3 %}
+  <div class="waterfall-card waterfall-card--hero">
+    <div class="waterfall-image-full">
+      <img src="{{ post.data.banner }}" alt="{{ post.data.title }}">
+      <div class="waterfall-overlay"></div>
+      <div class="waterfall-content-overlay">
+        <div class="waterfall-tags-light">
+          {% for tag in post.data.tags %}
+            <span class="waterfall-tag-light">#{{ tag }}</span>
+          {% endfor %}
+        </div>
+        <h3 class="waterfall-title-light">
+          <a href="{{ post.url }}">{{ post.data.title }}</a>
+        </h3>
+        <div class="waterfall-date-light">{{ post.data.created | date("YYYY.MM.DD") }}</div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 变体 5：极简，只有标题和标签 -->
+  {% elif variant == 4 %}
+  <div class="waterfall-card waterfall-card--minimal">
+    <div class="waterfall-content">
+      <div class="waterfall-date">{{ post.data.created | date("MM/DD") }}</div>
+      <h3 class="waterfall-title">
+        <a href="{{ post.url }}">{{ post.data.title }}</a>
+      </h3>
+      <div class="waterfall-tags">
+        {% for tag in post.data.tags %}
+          <span class="waterfall-tag-outline">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      <p class="waterfall-description-clamp">{{ post.data.description | truncate(60) }}</p>
+    </div>
+    <div class="waterfall-image-tiny">
+      <img src="{{ post.data.banner }}" alt="{{ post.data.title }}">
+    </div>
+  </div>
+  
+  <!-- 变体 6：手帐散落风格 -->
+  {% elif variant == 5 %}
+  <div class="waterfall-card waterfall-card--handbook">
+    <div class="waterfall-handbook-date">{{ post.data.created | date("DD") }}<span>{{ post.data.created | date("MM/YYYY") }}</span></div>
+    <div class="waterfall-image-offset">
+      <img src="{{ post.data.banner }}" alt="{{ post.data.title }}">
+    </div>
+    <h3 class="waterfall-title-handbook">
+      <a href="{{ post.url }}">{{ post.data.title }}</a>
+    </h3>
+    <div class="waterfall-tags-scattered">
+      {% for tag in post.data.tags %}
+        <span class="waterfall-tag-handbook">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    <p class="waterfall-description-handbook">{{ post.data.description | truncate(80) }}</p>
+    <div class="waterfall-handbook-deco">✦</div>
+  </div>
+  
+  <!-- 变体 7：引号风格，像摘录 -->
+  {% elif variant == 6 %}
+  <div class="waterfall-card waterfall-card--quote">
+    <div class="waterfall-quote-mark">“</div>
+    <p class="waterfall-quote-text">{{ post.data.description | truncate(120) }}</p>
+    <div class="waterfall-quote-footer">
+      <div class="waterfall-tags">
+        {% for tag in post.data.tags %}
+          <span class="waterfall-tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      <h3 class="waterfall-title-quote">
+        <a href="{{ post.url }}">{{ post.data.title }}</a>
+      </h3>
+      <div class="waterfall-date">{{ post.data.created | date("YYYY.MM.DD") }}</div>
+    </div>
+    <div class="waterfall-image-quote">
+      <img src="{{ post.data.banner }}" alt="{{ post.data.title }}">
+    </div>
+  </div>
+  
+  <!-- 变体 8：双图对比风格 -->
+  {% else %}
+  <div class="waterfall-card waterfall-card--dual">
+    <div class="waterfall-dual-images">
+      <img src="{{ post.data.banner }}" alt="{{ post.data.title }}">
+      <img src="{{ post.data.banner }}" alt="{{ post.data.title }}">
+    </div>
+    <div class="waterfall-content">
+      <h3 class="waterfall-title">
+        <a href="{{ post.url }}">{{ post.data.title }}</a>
+      </h3>
+      <div class="waterfall-tags">
+        {% for tag in post.data.tags %}
+          <span class="waterfall-tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      <div class="waterfall-date">{{ post.data.created | date("YYYY.MM.DD") }}</div>
+    </div>
+  </div>
+  {% endif %}
+  
+{% endif %}
+{% endfor %}
+</div>
