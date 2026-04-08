@@ -9,7 +9,6 @@ tags:
 webtab:
   - memo
 banner: https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800
-date: 2026-04-27T17:07:30+08:00
 ---
 
 # 欢迎来到中二橘的 Blog

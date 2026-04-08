@@ -11,7 +11,6 @@ webtab:
   - plugin
   - memo
 pick: true
-date: 2026-04-27T17:07:30+08:00
 ---
 
 # 我的系统规范

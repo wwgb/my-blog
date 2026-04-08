@@ -6,7 +6,6 @@ tags: blog
 banner: https://images.unsplash.com/photo-1517842645767-c639042777db?w=800
 webtab:
   - memo
-date: 2026-04-27T17:07:30+08:00
 ---
 
 # PKM 不是收藏，是思考

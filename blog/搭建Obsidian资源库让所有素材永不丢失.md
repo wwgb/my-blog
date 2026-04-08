@@ -14,7 +14,6 @@ popular: true
 pinned: true
 banner: https://picsum.photos/1200/602
 excerpt: 网页、截图、PDF、素材、模板、灵感、句子、视频、教程……所有东西都能放进 Obsidian 资源库。这篇告诉你如何搭建一个永远不乱、随时可查的个人资源系统。
-date: 2026-04-27T17:07:30+08:00
 ---
 
 Resources 资源库 = 你的第二大脑。

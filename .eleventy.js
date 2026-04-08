@@ -1,44 +1,39 @@
-// 在文件最开头添加这一行
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-
 module.exports = function (eleventyConfig) {
+  // 加载RSS插件（保留try/catch）
+  try {
+    const pluginRss = require("@11ty/eleventy-plugin-rss");
+    eleventyConfig.addPlugin(pluginRss);
+  } catch (e) {
+    console.warn("RSS插件加载失败（若不需要RSS可忽略）：", e.message);
+  }
 
-  // 添加 RSS 插件（放在最前面）
-  eleventyConfig.addPlugin(pluginRss);
-
-  // 1. 静态文件 passthrough —— 让 11ty 自动复制 css、images 到输出目录
-  eleventyConfig.addPassthroughCopy("css");
-  eleventyConfig.addPassthroughCopy("images");
-
-  // 2. 自定义文章集合 —— 自动读取 blog 文件夹下的所有 .md 文章
-  eleventyConfig.addCollection("blog", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("blog/*.md");
+  // 核心修复：给所有文章添加默认date字段（优先用created，没有则用updated，最后用当前时间）
+  eleventyConfig.addGlobalData("eleventyComputed", {
+    date: (data) => {
+      return data.created || data.updated || new Date();
+    }
   });
 
-  // 3. ✅ 全局默认布局 —— 所有 Markdown 文件自动使用 base.njk
+  // 原有配置保留不变
+  eleventyConfig.addPassthroughCopy("css");
+  eleventyConfig.addPassthroughCopy("images");
+  eleventyConfig.addCollection("blog", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("blog/**/*.md");
+  });
   eleventyConfig.addGlobalData("layout", "base.njk");
-
-  // 4. 优雅的日期格式化（保留原来的）
   eleventyConfig.addFilter('date', (date) => {
     if (!date) return '';
     const d = new Date(date);
     return new Intl.DateTimeFormat('zh-CN').format(d);
   });
-
-  // 5. 网站元数据（可选）
   eleventyConfig.addGlobalData("metadata", {
     url: "https://wwgb.github.io/my-blog"
   });
 
-  // 6. 基础配置（必须保留，保证 11ty 正常工作）
   return {
-    pathPrefix: "/my-blog/",  // 关键：加上这一行
-    // 让 Markdown 支持 Nunjucks 语法（{{ }} 之类）
+    pathPrefix: "/my-blog/",
     markdownTemplateEngine: "njk",
-    // 输入目录（当前目录）
     input: ".",
-    // 输出目录（编译后的网站）
     output: "_site"
   };
-
 };

@@ -8,7 +8,6 @@ webtab:
   - plugin
   - memo
 banner: https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800
-date: 2026-04-27T17:07:30+08:00
 ---
 
 # Obsidian 插件推荐：5 个必装效率插件

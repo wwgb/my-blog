@@ -13,7 +13,6 @@ webtab:
 series: Obsidian 工作流
 pinned: false
 banner: https://picsum.photos/1200/601
-date: 2026-04-27T17:07:30+08:00
 ---
 
 用 Obsidian 做项目管理，最大的好处是：

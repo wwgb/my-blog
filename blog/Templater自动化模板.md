@@ -14,7 +14,6 @@ webtab:
 banner: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSISYfATIwXun8ATPJJeWif1o7ULEBJllAvww&s
 blogID:
   - Dataview
-date: 2026-04-27T17:07:30+08:00
 ---
 
 # Templater 自动化模板

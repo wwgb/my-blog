@@ -13,7 +13,6 @@ webtab:
 series: Obsidian 工作流
 pinned: true
 banner: https://picsum.photos/1200/600
-date: 2026-04-27T17:07:30+08:00
 ---
 
 Inbox 是整个 Obsidian 笔记系统的入口，也是最重要的一环。

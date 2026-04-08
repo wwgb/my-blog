@@ -7,7 +7,6 @@ banner: https://plus.unsplash.com/premium_vector-1770456502872-5b942cf74a2b?w=60
 webtab:
   - plugin
   - case
-date: 2026-04-27T17:07:30+08:00
 ---
 
 # Obsidian 新手入门心得
