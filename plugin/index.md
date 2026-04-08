@@ -6,6 +6,6 @@ layout: base.njk
 
 {% for post in collections.blog %}
 {% if "plugin" in post.data.webtab %}
-<p><a href="{{ post.url }}">{{ post.data.title }}</a></p>
+<p><a href="{{ post.url | url }}">{{ post.data.title }}</a></p>
 {% endif %}
 {% endfor %}

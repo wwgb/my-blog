@@ -16,7 +16,7 @@
     </div>
     <div class="waterfall-content">
       <h3 class="waterfall-title">
-        <a href="{{ post.url }}">{{ post.data.title }}</a>
+        <a href="{{ post.url | url }}">{{ post.data.title }}</a>
       </h3>
       <div class="waterfall-date">{{ post.data.created | date("YYYY.MM.DD") }}</div>
       <p class="waterfall-description">{{ post.data.description | truncate(100) }}</p>
@@ -33,7 +33,7 @@
         {% endfor %}
       </div>
       <h2 class="waterfall-title-xl">
-        <a href="{{ post.url }}">{{ post.data.title }}</a>
+        <a href="{{ post.url | url }}">{{ post.data.title }}</a>
       </h2>
       <div class="waterfall-date">{{ post.data.created | date("MM/DD") }}</div>
       <p class="waterfall-description">{{ post.data.description | truncate(80) }}</p>
@@ -52,7 +52,7 @@
     <div class="waterfall-content">
       <div class="waterfall-date">{{ post.data.created | date("MM/DD") }}</div>
       <h4 class="waterfall-title-md">
-        <a href="{{ post.url }}">{{ post.data.title }}</a>
+        <a href="{{ post.url | url }}">{{ post.data.title }}</a>
       </h4>
       <div class="waterfall-tags-inline">
         {% for tag in post.data.tags %}
@@ -75,7 +75,7 @@
           {% endfor %}
         </div>
         <h3 class="waterfall-title-light">
-          <a href="{{ post.url }}">{{ post.data.title }}</a>
+          <a href="{{ post.url | url }}">{{ post.data.title }}</a>
         </h3>
         <div class="waterfall-date-light">{{ post.data.created | date("YYYY.MM.DD") }}</div>
       </div>
@@ -88,7 +88,7 @@
     <div class="waterfall-content">
       <div class="waterfall-date">{{ post.data.created | date("MM/DD") }}</div>
       <h3 class="waterfall-title">
-        <a href="{{ post.url }}">{{ post.data.title }}</a>
+        <a href="{{ post.url | url }}">{{ post.data.title }}</a>
       </h3>
       <div class="waterfall-tags">
         {% for tag in post.data.tags %}
@@ -110,7 +110,7 @@
       <img src="{{ post.data.banner }}" alt="{{ post.data.title }}">
     </div>
     <h3 class="waterfall-title-handbook">
-      <a href="{{ post.url }}">{{ post.data.title }}</a>
+      <a href="{{ post.url | url }}">{{ post.data.title }}</a>
     </h3>
     <div class="waterfall-tags-scattered">
       {% for tag in post.data.tags %}
@@ -133,7 +133,7 @@
         {% endfor %}
       </div>
       <h3 class="waterfall-title-quote">
-        <a href="{{ post.url }}">{{ post.data.title }}</a>
+        <a href="{{ post.url | url }}">{{ post.data.title }}</a>
       </h3>
       <div class="waterfall-date">{{ post.data.created | date("YYYY.MM.DD") }}</div>
     </div>
@@ -151,7 +151,7 @@
     </div>
     <div class="waterfall-content">
       <h3 class="waterfall-title">
-        <a href="{{ post.url }}">{{ post.data.title }}</a>
+        <a href="{{ post.url | url }}">{{ post.data.title }}</a>
       </h3>
       <div class="waterfall-tags">
         {% for tag in post.data.tags %}

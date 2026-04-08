@@ -43,7 +43,7 @@ title: PKM思考
       </div>
     </div>
     <div class="w-content">
-      <h3 class="w-title"><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+      <h3 class="w-title"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h3>
       <div class="w-date">{{ post.data.created | date("YYYY.MM.DD") }}</div>
       <p class="w-desc">{{ post.data.description | truncate(100) }}</p>
     </div>
@@ -58,7 +58,7 @@ title: PKM思考
           <span class="w-tag">#{{ tag }}</span>
         {% endfor %}
       </div>
-      <h2 class="w-title-xl"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+      <h2 class="w-title-xl"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
       <div class="w-date">{{ post.data.created | date("MM/DD") }}</div>
       <p class="w-desc">{{ post.data.description | truncate(80) }}</p>
     </div>
@@ -75,7 +75,7 @@ title: PKM思考
     </div>
     <div class="w-content">
       <div class="w-date">{{ post.data.created | date("MM/DD") }}</div>
-      <h4 class="w-title-md"><a href="{{ post.url }}">{{ post.data.title }}</a></h4>
+      <h4 class="w-title-md"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h4>
       <div class="w-tags-inline">
         {% for tag in post.data.tags %}
           <span class="w-tag-small">{{ tag }}</span>
@@ -96,7 +96,7 @@ title: PKM思考
             <span class="w-tag-light">#{{ tag }}</span>
           {% endfor %}
         </div>
-        <h3 class="w-title-light"><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+        <h3 class="w-title-light"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h3>
         <div class="w-date-light">{{ post.data.created | date("YYYY.MM.DD") }}</div>
       </div>
     </div>
@@ -107,7 +107,7 @@ title: PKM思考
   <div class="waterfall-card w-card--minimal {{ styleClass }} {% if is_short %}waterfall-card--short{% endif %}">
     <div class="w-content">
       <div class="w-date">{{ post.data.created | date("MM/DD") }}</div>
-      <h3 class="w-title"><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+      <h3 class="w-title"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h3>
       <div class="w-tags">
         {% for tag in post.data.tags %}
           <span class="w-tag-outline">{{ tag }}</span>
@@ -127,7 +127,7 @@ title: PKM思考
     <div class="w-image-offset">
       <img src="{{ post.data.banner }}" alt="{{ post.data.title }}">
     </div>
-    <h3 class="w-title-handbook"><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+    <h3 class="w-title-handbook"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h3>
     <div class="w-tags-scattered">
       {% for tag in post.data.tags %}
         <span class="w-tag-handbook">{{ tag }}</span>
@@ -148,7 +148,7 @@ title: PKM思考
           <span class="w-tag">{{ tag }}</span>
         {% endfor %}
       </div>
-      <h3 class="w-title-quote"><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+      <h3 class="w-title-quote"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h3>
       <div class="w-date">{{ post.data.created | date("YYYY.MM.DD") }}</div>
     </div>
     <div class="w-image-quote">
@@ -164,7 +164,7 @@ title: PKM思考
       <img src="{{ post.data.banner }}" alt="{{ post.data.title }}">
     </div>
     <div class="w-content">
-      <h3 class="w-title"><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+      <h3 class="w-title"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h3>
       <div class="w-tags">
         {% for tag in post.data.tags %}
           <span class="w-tag">{{ tag }}</span>

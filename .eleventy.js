@@ -10,26 +10,23 @@ module.exports = function (eleventyConfig) {
   });
 
   // 3. ✅ 全局默认布局 —— 所有 Markdown 文件自动使用 base.njk
-  // 以后不用再写：layout: base.njk 了！
   eleventyConfig.addGlobalData("layout", "base.njk");
 
-
-// 优雅的日期格式化
-eleventyConfig.addFilter('date', (date) => {
-  if (!date) return '';
-  const d = new Date(date);
-  return new Intl.DateTimeFormat('zh-CN').format(d);
-});
-
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addGlobalData("metadata", {
-    url: "https://wwgb.github.io/my-pkm-blog/" // 例如 https://xxx.github.io
+  // 4. 优雅的日期格式化
+  eleventyConfig.addFilter('date', (date) => {
+    if (!date) return '';
+    const d = new Date(date);
+    return new Intl.DateTimeFormat('zh-CN').format(d);
   });
-};
 
+  // 5. 网站元数据（可选）
+  eleventyConfig.addGlobalData("metadata", {
+    url: "https://wwgb.github.io/my-blog/"
+  });
 
-  // 4. 基础配置（必须保留，保证 11ty 正常工作）
+  // 6. 基础配置（必须保留，保证 11ty 正常工作）
   return {
+    pathPrefix: "/my-blog/",  // 关键：加上这一行
     // 让 Markdown 支持 Nunjucks 语法（{{ }} 之类）
     markdownTemplateEngine: "njk",
     // 输入目录（当前目录）
