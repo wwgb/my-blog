@@ -1,4 +1,10 @@
+// 在文件最开头添加这一行
+const pluginRss = require("@11ty/eleventy-plugin-rss");
+
 module.exports = function (eleventyConfig) {
+
+  // 添加 RSS 插件（放在最前面）
+  eleventyConfig.addPlugin(pluginRss);
 
   // 1. 静态文件 passthrough —— 让 11ty 自动复制 css、images 到输出目录
   eleventyConfig.addPassthroughCopy("css");
@@ -12,7 +18,7 @@ module.exports = function (eleventyConfig) {
   // 3. ✅ 全局默认布局 —— 所有 Markdown 文件自动使用 base.njk
   eleventyConfig.addGlobalData("layout", "base.njk");
 
-  // 4. 优雅的日期格式化
+  // 4. 优雅的日期格式化（保留原来的）
   eleventyConfig.addFilter('date', (date) => {
     if (!date) return '';
     const d = new Date(date);
