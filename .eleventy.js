@@ -21,7 +21,7 @@ module.exports = function (eleventyConfig) {
 
   // 5. 网站元数据（可选）
   eleventyConfig.addGlobalData("metadata", {
-    url: "https://wwgb.github.io/my-blog/"
+    url: "https://wwgb.github.io/my-blog"
   });
 
   // 6. 基础配置（必须保留，保证 11ty 正常工作）
